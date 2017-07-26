@@ -1299,7 +1299,7 @@ class Administrador extends CI_Controller {
 
         $data['scriptFooter'] = array();
         $data['nivel_acesso'] = 0;
-
+        $data['configuracoes'] = $this->gercont_model->configuracoes();
         if ($this->input->post('enviado')) {
 
             $login = $this->input->post('login');
@@ -1321,7 +1321,7 @@ class Administrador extends CI_Controller {
     // Função padrão, não remover
     public function logout() {
         $this->session->sess_destroy();
-        redirect(base_url() . $this->uri->segment(1) . '/login', 'location');
+        redirect(base_url() . 'adm' . '/login', 'location');
     }
 
 }
